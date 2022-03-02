@@ -42,7 +42,7 @@ a, a:visited, a:hover{
 
 //button
 button, .button{
-  padding: 1.6rem 3.4rem;
+  padding: 1.4rem 3.5rem;
   border-radius: 50px;
   outline: none;
   border: 0;
@@ -50,7 +50,12 @@ button, .button{
   color: var(--neutral-white);
   cursor: pointer;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1.6rem;
+  transition: opacity 300ms ease-in-out;
+
+  &:hover{
+    opacity: 0.75;
+  }
 }
 
 //visibility

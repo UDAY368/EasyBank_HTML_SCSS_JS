@@ -1,13 +1,14 @@
 .app__header{
 
   nav{
-    padding: 2.4rem;
+    padding: 1.65rem 2.4rem;
   }
 
   &-logo{
 
     img{
-      
+      height: 2.2rem;
+      width: 14.1rem;
     }
 
   }
@@ -29,11 +30,34 @@
   &-links{
 
     a{
+      position: relative;
       font-size: 1.4rem;
       color: var(--neutral-grayishBlue);
+      transition: color 300ms ease-in-out;
 
       &:not(:last-child){
         margin-right: 3.2rem;
+      }
+
+      &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        height: 5px;
+        left: 0;
+        right: 0;
+        bottom: -30px;
+        background:linear-gradient(to right, var(--primary-limeGreen), var(--primary-brightCyan));
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+      }
+
+      &:hover{
+        color: var(--primary-darkBlue);
+
+        &::after{
+          opacity: 1;
+        }
       }
     }
   }
