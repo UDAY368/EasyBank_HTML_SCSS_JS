@@ -15,11 +15,22 @@ body{
   font-family: 'Public Sans', sans-serif;
   font-size: 1.8rem;
   color: var(--neutral-grayishBlue);
+
+  &.noScroll{
+    overflow: hidden;
+  }
 }
 
 a, a:visited, a:hover{
   text-decoration: none;
   cursor: pointer;
+}
+
+//spacing
+
+.container{
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
 }
 
 //Flexbox

@@ -1,18 +1,25 @@
 const btnHamburger = document.querySelector('#buttonHamburger');
+const body = document.querySelector('body');
 const header = document.querySelector('.app__header');
 const overlay = document.querySelector('.overlay');
+const fadeElements = document.querySelectorAll('.has-fade');
 
 btnHamburger.addEventListener('click', function() {
-  console.log('click Hamburger');
   
   if(header.classList.contains('open')){      //close Hamburger menu
+    body.classList.remove('noScroll');
     header.classList.remove('open');
-    overlay.classList.add('fade-out');
-    overlay.classList.remove('fade-in');
+    fadeElements.forEach(function(element){
+      element.classList.add('fade-out');
+      element.classList.remove('fade-in');
+    });
   }
-  else{
+  else{                                     //open Hamburger menu
     header.classList.add('open');
-    overlay.classList.add('fade-in');
-    overlay.classList.remove('fade-out');
+    body.classList.add('noScroll');
+    fadeElements.forEach(function(element){
+      element.classList.add('fade-in');
+      element.classList.remove('fade-out');
+    });
   }
 })

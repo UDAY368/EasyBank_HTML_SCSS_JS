@@ -26,7 +26,7 @@
   .overlay{
     background-image: linear-gradient(var(--primary-darkBlue),transparent);
     position: fixed;
-    top: 6rem;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
@@ -38,7 +38,10 @@
   }
 
   nav{
-    padding: 1.65rem 2.4rem;
+    position: relative;
+    background-color: #fff;
+    padding-top: 1.7rem;
+    padding-bottom: 1.7rem;
   }
 
   &-logo{
@@ -50,7 +53,7 @@
 
   }
 
-  &-menu{   //mobile menu
+  &-toggle{   //mobile menu
       
     > span{
       display: block;
@@ -99,6 +102,23 @@
           opacity: 1;
         }
       }
+    }
+  }
+
+  &-menu{
+    position: absolute;
+    width: calc(100% - 4.8rem);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--neutral-white);
+    padding: 2.6rem;
+    margin-top: 2.4rem;
+    border-radius: 5px;
+    a{
+      display: block;
+      padding: 1rem;
+      color: var(--primary-darkBlue);
+      text-align: center;
     }
   }
 }

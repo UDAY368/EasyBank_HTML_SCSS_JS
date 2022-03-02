@@ -12,6 +12,10 @@
   --font-xlarge:2.6rem;
 }
 
+.has-fade {
+  visibility: hidden;
+}
+
 @-webkit-keyframes fade-in {
   from {
     visibility: hidden;
@@ -43,8 +47,8 @@
 }
 
 .fade-in {
-  -webkit-animation: fade-in 300ms ease-in-out forwards;
-          animation: fade-in 300ms ease-in-out forwards;
+  -webkit-animation: fade-in 200ms ease-in-out forwards;
+          animation: fade-in 200ms ease-in-out forwards;
 }
 
 @-webkit-keyframes fade-out {
@@ -78,8 +82,8 @@
 }
 
 .fade-out {
-  -webkit-animation: fade-out 300ms ease-in-out forwards;
-          animation: fade-out 300ms ease-in-out forwards;
+  -webkit-animation: fade-out 200ms ease-in-out forwards;
+          animation: fade-out 200ms ease-in-out forwards;
 }
 
 html {
@@ -103,9 +107,18 @@ body {
   color: var(--neutral-grayishBlue);
 }
 
+body.noScroll {
+  overflow: hidden;
+}
+
 a, a:visited, a:hover {
   text-decoration: none;
   cursor: pointer;
+}
+
+.container {
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
 }
 
 .flex {
@@ -185,7 +198,7 @@ button:hover, .button:hover {
   background-image: -webkit-gradient(linear, left top, left bottom, from(var(--primary-darkBlue)), to(transparent));
   background-image: linear-gradient(var(--primary-darkBlue), transparent);
   position: fixed;
-  top: 6rem;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -193,7 +206,10 @@ button:hover, .button:hover {
 }
 
 .app__header nav {
-  padding: 1.65rem 2.4rem;
+  position: relative;
+  background-color: #fff;
+  padding-top: 1.7rem;
+  padding-bottom: 1.7rem;
 }
 
 .app__header-logo img {
@@ -201,7 +217,7 @@ button:hover, .button:hover {
   width: 14.1rem;
 }
 
-.app__header-menu > span {
+.app__header-toggle > span {
   display: block;
   width: 26px;
   height: 2px;
@@ -212,7 +228,7 @@ button:hover, .button:hover {
           transform-origin: 3px 1px;
 }
 
-.app__header-menu > span:not(:last-child) {
+.app__header-toggle > span:not(:last-child) {
   margin-bottom: 5px;
 }
 
@@ -249,5 +265,24 @@ button:hover, .button:hover {
 
 .app__header-links a:hover::after {
   opacity: 1;
+}
+
+.app__header-menu {
+  position: absolute;
+  width: calc(100% - 4.8rem);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: var(--neutral-white);
+  padding: 2.6rem;
+  margin-top: 2.4rem;
+  border-radius: 5px;
+}
+
+.app__header-menu a {
+  display: block;
+  padding: 1rem;
+  color: var(--primary-darkBlue);
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
