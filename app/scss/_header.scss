@@ -1,5 +1,42 @@
 .app__header{
 
+  // Hamburger Animations
+  &.open{
+
+    .header-toggle{
+      > span:first-child {
+        transform: rotate(45deg);
+        top: -5px;
+        left: 5px;
+      }
+  
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+  
+      > span:last-child {
+        transform: rotate(-45deg);
+        top: 5px;
+        left: -5px;
+      }
+    }
+
+  }
+
+  .overlay{
+    background-image: linear-gradient(var(--primary-darkBlue),transparent);
+    position: fixed;
+    top: 6rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+
+    &.fade-in{
+
+    }
+  }
+
   nav{
     padding: 1.65rem 2.4rem;
   }
@@ -20,11 +57,14 @@
       width: 26px;
       height: 2px;
       background-color: var(--primary-darkBlue);
+      transition: all 300ms ease-in-out;
+      transform-origin: 3px 1px;
 
       &:not(:last-child){
-        margin-bottom: 3px;
+        margin-bottom: 5px;
       }
     }
+
   }
 
   &-links{
@@ -62,3 +102,4 @@
     }
   }
 }
+
